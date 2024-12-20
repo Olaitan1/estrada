@@ -49,8 +49,15 @@ export const getAllTasks = async (req: Request, res: Response) => {
   const { page = 1, limit = 10, status, search } = req.query;
 
   try {
+    // Ensure req.user is defined
+    if (!req.user || !req.user.role) {
+      return res
+        .status(403)
+        .json({ message: "Authorization failed: Invalid user" });
+    }
+
     // Check if the user is an admin
-    if (req.user.role  !== "admin") {
+    if (req.user.role !== "admin") {
       return res
         .status(403)
         .json({ message: "You are not authorized to view all tasks" });

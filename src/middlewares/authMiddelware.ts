@@ -28,3 +28,13 @@ export const authenticate = (req: JwtPayload, res: Response, next: NextFunction)
 //       .json({ message: "Not authorized to perform this action" });
 //   }
 // };
+
+// export const manager = (req:Request, res:Response, next: NextFunction) => {
+//   if (req.user && req.user.role === "manager") {
+//     next();
+//   } else {
+//     return res
+//       .status(403)
+//       .json({ message: "Not authorized to perform this action" });
+//   }
+// };

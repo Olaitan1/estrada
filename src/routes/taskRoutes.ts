@@ -6,7 +6,7 @@ import {
   getAllTasks,
   deleteTask,
   updateTask,
-} from "../controllers/taslkController";
+} from "../controllers/taskController";
 
 
 const router:any = Router();

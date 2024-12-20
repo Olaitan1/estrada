@@ -53,7 +53,7 @@ Local Setup
 1. Clone the repository:
 bash
 Copy code
-git clone https://github.com/yourusername/task-manager-api.git
+git clone https://github.com/Olaitan1/estrada.git
 cd task-manager-api
 2. Install dependencies:
 bash
