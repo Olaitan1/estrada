@@ -33,8 +33,10 @@ export const createTask = async (req: JwtPayload, res: Response) => {
 // Get User's Tasks
 export const getUserTasks = async (req: JwtPayload, res: Response) => {
   try {
+    const { userId } = req.user
+    console.log(userId)
     const tasks = await Task.findAll({
-      where: { userId: req.user.id },
+      where: { userId },
       order: [['createdAt', 'DESC']],
     });
     res.status(200).json(tasks);
